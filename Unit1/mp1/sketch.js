@@ -193,4 +193,4 @@ text('"As soon as the chosen target catches a glimpse of a portal, it is already
 // record the mouse location in console when clicked
 //function mouseReleased() {
 //  print(mouseX + ", " + mouseY);
-//}
+}
