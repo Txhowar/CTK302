@@ -185,12 +185,12 @@ text('"As soon as the chosen target catches a glimpse of a portal, it is already
 
 
   // this shows mouse location - comment it out when you're done!
-  textSize(16);
-  fill("yellow");
-  text(mouseX + ", " + mouseY, 40, 40);
-}
+//  textSize(16);
+//  fill("yellow");
+//  text(mouseX + ", " + mouseY, 40, 40);
+//}
 
 // record the mouse location in console when clicked
-function mouseReleased() {
-  print(mouseX + ", " + mouseY);
-}
+//function mouseReleased() {
+//  print(mouseX + ", " + mouseY);
+//}
