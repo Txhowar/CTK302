@@ -21,6 +21,7 @@ function draw() {
       break;
 
     case 1:
+    background("black");
       text("CASE 1", 100, 100);
 
         fill('#8A39E1');
@@ -32,6 +33,7 @@ function draw() {
 
 
     case 2:
+      background("white");
       text("CASE 2", 100, 100);
       fill('#8A39E1');
       quad(425, 580, 490, 500, 425, 420, 360, 500);
@@ -53,7 +55,7 @@ function draw() {
       break;
 
     case 3:
-
+  background("red");
       text("CASE 3", 100, 100);
       quad(425, 580, 490, 500, 425, 420, 360, 500);
 
@@ -74,6 +76,7 @@ function draw() {
       break;
 
     case 4:
+      background("green");
       text("SUCCESS", 100, 100);
       fill('#8A39E1');
       quad(425, 580, 490, 500, 425, 420, 360, 500);
