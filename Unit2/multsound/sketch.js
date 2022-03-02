@@ -13,7 +13,7 @@ function setup() {
 }
 
 function draw() {
-
+state = (state + 1) % 6;
 switch (state) {
   case 0:
 
@@ -42,7 +42,7 @@ background('orange');
 }
 
 function mouseReleased(){
-  state = (state + 1) % 6;
+
   song1.pause();
   song2.pause();
   song3.pause();

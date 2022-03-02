@@ -1,4 +1,5 @@
 let state = 0;
+let timer = 0;
 
 function setup() {
   createCanvas(1500, 1000);
@@ -15,18 +16,18 @@ function draw() {
       text("CLICK TO START", 800, 400);
       //timer code
       timer++;
-      if (timer > 3*60){
+      if (timer > 3 * 60) {
         timer = 0;
-        state = 1 ;
+        state = 1;
       }
       break;
 
     case 1:
       text("CASE 1", 100, 100);
       timer++;
-      if (timer > 5*60){
+      if (timer > 5 * 60) {
         timer = 0;
-        state = 2 ;
+        state = 2;
       }
       break;
 
@@ -34,9 +35,10 @@ function draw() {
     case 2:
       text("CASE 2", 100, 100);
       timer++;
-      if (timer > 5*60){
+      if (timer > 5 * 60) {
         timer = 0;
-        state = 0 ;
+        state = 0;
       }
       break;
+  }
 }

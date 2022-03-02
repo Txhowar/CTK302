@@ -1,7 +1,7 @@
 let state = 0
 
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(windowWidth - 10, windowHeight - 10);
 }
 
 function draw() {
@@ -9,12 +9,12 @@ function draw() {
   switch (state) {
     case 0:
       background("orange");
-      text("My laptop is on 1%, where did I put the charger?", width / 2, height / 2);
+      text("Why did the chicken?", width / 2, height / 2);
       break;
 
     case 1:
       background("red");
-      text("It's ri ", width / 2, height / 2);
+      text("Because chicken noodle soup.", width / 2, height / 2);
       // put a picture here
       break;
 

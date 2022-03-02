@@ -3,9 +3,11 @@ let lock;
 let unlock;
 let font1;
 let timer = 0;
+let state = 0;
 
 function setup() {
-  createCanvas(1520, 749)
+
+    createCanvas(windowWidth - 10, windowHeight - 10);
   font1 = loadFont("assets/Orbitron Black.ttf");
   lock = loadImage("assets/HandLock.jpg");
   unlock = loadImage("assets/HandUnlock.jpg");
@@ -82,16 +84,10 @@ function draw() {
     fill("blue");
   image(unlock, width / 2 - 500, height / 2 - 400, 950, 900, 0);
   text("LOGGED IN", 50, 80);
+
+  timer++;
 }
-  // this shows mouse location - comment it out when you're done!
-  //  textSize(16);
-  //  fill("red");
-  //  text(mouseX + ", " + mouseY, 40, 40);
 
 
-  // record the mouse location in console when clicked
-  //function mouseReleased() {
-  // print(mouseX + ", " + mouseY);
-  //}
 
 }
