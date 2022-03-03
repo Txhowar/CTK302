@@ -134,7 +134,7 @@ function draw() {
 
     push();
     fill("red");
-    rect(1250, 600, 100, 150);
+    rect(1250, 600, 100, 110);
     pop();
     fill("blue");
     text("LOG OUT", 1250, 650);
