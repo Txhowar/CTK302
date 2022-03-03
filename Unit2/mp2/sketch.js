@@ -39,7 +39,7 @@ function draw() {
         fill("red");
         textFont(font1);
         textSize(16);
-        text("PASSWORD DENIED, PLACE HAND HERE", 500, 40);
+        text("PASSWORD DENIED, PLACE HAND HERE", 550, 40);
         break;
 
 
