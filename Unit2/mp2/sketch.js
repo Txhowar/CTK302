@@ -39,7 +39,7 @@ function draw() {
         fill("red");
         textFont(font1);
         textSize(16);
-        text("PASSWORD DENIED, PLACE HAND HERE", 550, 40);
+        text("PASSWORD DENIED, PLACE HAND HERE", 600, 40);
         break;
 
 
@@ -98,7 +98,7 @@ function draw() {
     image(unlock, width / 2 - 500, height / 2 - 400, 950, 900, 0);
     text("LOG IN SUCCESSFUL", 50, 80);
 
-    text("ENJOY YOUR STAY, AGENT", 50, 130 );
+    text("ENJOY YOUR STAY, AGENT", 50, 130);
 
     timer++;
 
@@ -106,14 +106,14 @@ function draw() {
   if ((timer > 8 * 60)) {
 
     text("WELCOME TO WINDOWS 2099", 50, 180);
-  sound.play() ;
+    sound.play();
 
   }
 
   if ((timer > 9 * 60)) {
 
     text("LOADING...", 50, 230);
-    sound.pause() ;
+    sound.pause();
 
 
   }
@@ -143,17 +143,27 @@ function draw() {
 
   }
 
+  if ((timer > 12 * 60)) {
+
+    text("DATABASES ON ALL OF HUMANITY", 50, 330);
 
 
-  function mouseReleased() {
-    if ((mouseX > 100) && (mouseX < 200) && (mouseY < 200)) {
-
-      timer = 0;
-
-
-    }
-
+    push();
+    fill("red");
+    rect(1250, 600, 100, 110);
+    pop();
+    fill("blue");
+    text("LOG OUT", 1250, 650);
 
 
+
+  }
+
+}
+
+function mouseReleased() {
+  if (mouseX > 1250 && mouseX < 1350 && mouseY > 600 && mouseY < 710 ) {
+
+    timer = 0;
   }
 }
