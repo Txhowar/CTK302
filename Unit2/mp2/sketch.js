@@ -5,9 +5,16 @@ let font1;
 let timer = 0;
 let state = 0;
 
+
+function preload() {
+
+  sound = loadSound("assets/loggedin.mp3");
+
+}
+
 function setup() {
 
-    createCanvas(windowWidth - 10, windowHeight - 10);
+  createCanvas(windowWidth - 10, windowHeight - 10);
   font1 = loadFont("assets/Orbitron Black.ttf");
   lock = loadImage("assets/HandLock.jpg");
   unlock = loadImage("assets/HandUnlock.jpg");
@@ -32,7 +39,7 @@ function draw() {
         fill("red");
         textFont(font1);
         textSize(16);
-        text("PASSWORD DENIED, PLACE HAND HERE", 560, 40);
+        text("PASSWORD DENIED, PLACE HAND HERE", 500, 40);
         break;
 
 
@@ -72,22 +79,81 @@ function draw() {
         fill("green");
         text("5 FINGERPRINTS DETECTED, LOGGING IN", 50, 80);
 
+
+
+        text("DO NOT REMOVE HAND", 50, 130);
+
+        text("OPENING DATABASES...", 50, 180);
+
+        text("INITIALIZING FINGERPRINT...", 50, 230)
+
         timer++;
-
-
         break;
 
 
     }
-  }
-  else {
+  } else {
+
     fill("blue");
-  image(unlock, width / 2 - 500, height / 2 - 400, 950, 900, 0);
-  text("LOGGED IN", 50, 80);
+    image(unlock, width / 2 - 500, height / 2 - 400, 950, 900, 0);
+    text("LOG IN SUCCESSFUL", 50, 80);
 
-  timer++;
-}
+    text("ENJOY YOUR STAY, AGENT", 50, 130 );
+
+    timer++;
+
+  }
+  if ((timer > 8 * 60)) {
+
+    text("WELCOME TO WINDOWS 2099", 50, 180);
+  sound.play() ;
+
+  }
+
+  if ((timer > 9 * 60)) {
+
+    text("LOADING...", 50, 230);
+    sound.pause() ;
+
+
+  }
+
+  if ((timer > 10 * 60)) {
+
+    text("LOADING COMPLETE", 50, 280);
 
 
 
+  }
+
+
+  if ((timer > 11 * 60)) {
+
+    text("DATABASES ON ALL OF HUMANITY", 50, 330);
+
+
+    push();
+    fill("red");
+    rect(1250, 600, 100, 300);
+    pop();
+    fill("blue");
+    text("LOG OUT", 1250, 650);
+
+
+
+  }
+
+
+
+  function mouseReleased() {
+    if ((mouseX > 100) && (mouseX < 200) && (mouseY < 200)) {
+
+      timer = 0;
+
+
+    }
+
+
+
+  }
 }
