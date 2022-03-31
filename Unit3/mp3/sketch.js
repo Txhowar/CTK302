@@ -9,8 +9,10 @@ let score = 0;
 let debug = true;
 let duckSize = 50;
 let sizeInc = 0;
+let song1;
 function preload() {
-
+  font1 = loadFont("assets/1x/boogaloo.ttf");
+  //song1 = loadSound("assets/jazz1.mp3");
   sound = loadSound("assets/1x/crunch.wav");
   duck = loadImage("assets/1x/duckbird.png");
   worm = loadImage("assets/1x/worm.png");
@@ -26,8 +28,8 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  sound.setVolume(0.1);
-
+  sound.setVolume(0.2);
+  //song1.setVolume(0.5);
   // Spawn objects
   for (let i = 0; i < 20; i++) {
     cars.push(new Car(round(random(4))));
@@ -42,7 +44,8 @@ function draw() {
 
   switch (state) {
     case 0:
-
+      //song1.play();
+      textFont(font1);
       background('green');
       image(egg2, 450, 150, 500, 500);
       fill('yellow');
@@ -85,7 +88,7 @@ function draw() {
     case 3:
       background('green');
       fill('blue');
-      text("The wrath of DuckBird has been stopped. The ecosystem is saved!", 200, 200);
+      text("The wrath of DuckBird has been stopped. The ecosystem is saved!", 400, 200);
       image(snail, 500, 300, 300, 300);
 
       break;
