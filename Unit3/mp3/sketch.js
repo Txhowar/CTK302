@@ -9,10 +9,10 @@ let score = 0;
 let debug = true;
 let duckSize = 50;
 let sizeInc = 0;
-let song1;
+//let song1;
 function preload() {
   font1 = loadFont("assets/1x/boogaloo.ttf");
-  song1 = loadSound("assets/1x/zoned.wav");
+//  song1 = loadSound("assets/1x/zoned.wav");
   sound = loadSound("assets/1x/crunch.wav");
   duck = loadImage("assets/1x/duckbird.png");
   worm = loadImage("assets/1x/worm.png");
@@ -29,8 +29,8 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   sound.setVolume(0.2);
-  song1.setVolume(0.1);
-  song1.play();
+  //song1.setVolume(0.1);
+  //song1.play();
   // Spawn objects
   for (let i = 0; i < 20; i++) {
     cars.push(new Car(round(random(4))));
