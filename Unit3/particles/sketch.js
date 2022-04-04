@@ -2,6 +2,7 @@ let cars = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  rocket = loadImage("assets/rocket.png");
 //  for (let i = 0; i < 20; i++) {
   //  cars.push(new Car());
 //  }
@@ -11,7 +12,8 @@ noStroke();
 }
 
 function draw() {
-  background(100);
+  background('white');
+    image(rocket, 500, 200, 300, 300);
 cars.push(new Car());
   for (let i = 0; i < cars.length; i++) {
 
@@ -35,12 +37,12 @@ class Car {
 
   // constructor
   constructor() {
-    this.pos = createVector(100, 100); // initialize your attributes here
+    this.pos = createVector(650, 410); // initialize your attributes here
     this.vel = createVector(random(10), random(10));
-    this.r = random(255);
-    this.g = random(255);
-    this.b = random(255);
-    this.a = random(200, 255);
+    this.r = random(255, 0, 0);
+    this.g = random(165, 42, 42);
+    this.b = random(145, 56, 49);
+    this.a = random(255, 68, 51);
     this.s = random(5, 20);
   }
 
@@ -48,7 +50,7 @@ class Car {
 
   display() {
     fill(this.r, this.g, this.b, this.a, this.s);
-    ellipse(this.pos.x, this.pos.y, 20);
+    ellipse(this.pos.x, this.pos.y, this.s);
   }
 
   move() {
