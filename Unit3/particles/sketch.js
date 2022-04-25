@@ -8,10 +8,11 @@ function setup() {
 //  }
   // Spawn one object
 noStroke();
-
+  angleMode(DEGREES);
 }
 
 function draw() {
+  //rotate(90);
   background('white');
     image(rocket, 500, 200, 300, 300);
 cars.push(new Car());
