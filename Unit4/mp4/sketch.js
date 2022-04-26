@@ -23,6 +23,18 @@ let sizeInc = 0;
 
 function preload() {
   duck = loadImage("assets/1x/duckbird.png");
+  font1 = loadFont("assets/1x/boogaloo.ttf");
+//  song1 = loadSound("assets/1x/zoned.wav");
+
+  duck = loadImage("assets/1x/duckbird.png");
+  worm = loadImage("assets/1x/worm.png");
+  snail = loadImage("assets/1x/snail.png");
+  roach = loadImage("assets/1x/roach.png");
+  raccoon = loadImage("assets/1x/raccoon.png");
+  egg1 = loadImage("assets/1x/eggbird.png");
+  egg2 = loadImage("assets/1x/eggbird2.png");
+  grape = loadImage("assets/1x/grapes.png");
+  forest = loadImage("assets/1x/forestbg.png");
 }
 
 function setup() {
@@ -79,6 +91,8 @@ function draw() {
   duckPos.x = xPosition;
   duckPos.y = yPosition;
 
+duckPos.x = mouseX;
+duckPos.y = mouseY;
 
   // iterate through the car loop to move them and see if we need to delete cars
   for (var i = 0; i < cars.length; i++) {
@@ -143,12 +157,86 @@ window.addEventListener('devicemotion', function(e) {
   z = e.acceleration.z;
 });
 
+class Car {
+  // constructor and attributes
+  constructor(type) {
+    this.pos = createVector(random(width), random(height)); // initialize your attributes here
+    //this.v = createVector(random(1, 10), random(1, 10));
 
+    this.sizeInc = 0;
+    this.image = snail;
+    this.type = type;
+    switch (this.type) {
+      case 0: {
+        this.image = snail;
+        this.v = createVector(random(1, 2), random(0));
+        this.size = random(25, 75);
+        //this.sizeInc = this.size/2;
+        break;
+      }
+
+      case 1:{
+        this.image = worm;
+        this.v = createVector(random(3, 4), random(0));
+        this.size = random(10, 11);
+        //this.sizeInc = this.size/4;
+        break;
+      }
+
+      case 2: {
+        this.image = grape;
+        this.v = createVector(0,0);
+        this.size = random(10, 12);
+        //this.sizeInc = this.size/2;
+        break;
+      }
+
+      case 3:{
+        this.image = roach;
+        this.v = createVector(random(5, 10), random(0));
+        this.size = random(10, 40);
+        //this.sizeInc = this.size/2;
+        break;
+      }
+
+      case 4:{
+        this.image = raccoon;
+        this.v = createVector(random(10, 15), random(0));
+        this.size = random(150, 200);
+        //this.sizeInc = this.size/2;
+        break;
+      }
+
+
+    }
+  }
+
+  // methods
+
+  display() {
+
+    image(this.image, this.pos.x, this.pos.y, this.size, this.size);
+    //fill(this.r, this.b, this.g, this.o);
+    //rect(this.pos.x, this.pos.y, 75, 25);
+    // ellipse(this.pos.x, this.pos.y + 40, 30, 30);
+    // ellipse(this.pos.x+70, this.pos.y + 40, 30, 30);
+    // textSize(this.size) ;
+    //text("bruh", this.pos.x, this.pos.y) ;
+  }
+
+  drive() {
+    this.pos.add(this.v);
+    if (this.pos.x > width) this.pos.x = 0;
+    if (this.pos.x < 0) this.pos.x = width;
+    if (this.pos.y > height) this.pos.y = 0;
+    if (this.pos.y < 0) this.pos.y = height;
+  }
+}
 
 
 
 // car class!!
-function Car() {
+function Car1() {
   // attributes
   this.pos = createVector(100, 100);
   this.vel = createVector(random(-5, 5), random(-5, 5));
