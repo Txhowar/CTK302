@@ -63,7 +63,7 @@ function draw() {
 
 
   // move the frog around the screen
-  //push(); // before you use translate, rotate, or scale commands, push and then pop after
+  push(); // before you use translate, rotate, or scale commands, push and then pop after
   translate(xPosition, yPosition); // move everything over by x, y
   //  rotate(radians(alpha)); // using alpha in here so it doesn't feel bad
 
@@ -71,13 +71,14 @@ function draw() {
   // image(bunnyImage, 0, 0, 500, 500);
   //fill('green');
   //ellipse(0, 0, 80, 80);
-  //pop();
+    image(duck, 0, 0, duckSize, duckSize);
+  pop();
 
 
   // update the frog's position using the accelerometer data
   duckPos.x = xPosition;
   duckPos.y = yPosition;
-  image(duck, duckPos.x, duckPos.y, duckSize, duckSize);
+
 
   // iterate through the car loop to move them and see if we need to delete cars
   for (var i = 0; i < cars.length; i++) {
