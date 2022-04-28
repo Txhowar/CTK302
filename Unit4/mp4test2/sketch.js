@@ -12,7 +12,7 @@ var duck;
 var state = 0;
 
 function preload() {
-duck = loadImage("assets/1x/duckbird.png");
+  duck = loadImage("duckbird.png");
 }
 
 function setup() {
@@ -41,6 +41,7 @@ function setup() {
 
 function draw() {
 
+  background('#c6f5ff'); // light blue
 
   switch (state) {
 
@@ -62,28 +63,6 @@ function draw() {
     break;
 
     case 1:
-
-    background('green');
-    textSize(64);
-    fill("yellow");
-    text("Select Difficulty", 550, 100);
-    textSize(40);
-    fill("blue");
-    rect(675, 310, 130, 50);
-    fill("black");
-    text("Easy", 675, 350);
-    fill("yellow");
-    rect(675, 385, 130, 50);
-    fill("black");
-    text("Normal", 675, 425);
-    fill("red");
-    rect(675, 460, 130, 50);
-    fill("black");
-    text("Hard", 675, 500);
-
-
-
-    case 2:
       // the map command !!!!
       // takes your variable and maps it from range 1 to range 2
       // map(yourVar, range1_x, range1_y, range2_x, range2_y) ;
@@ -118,7 +97,7 @@ function draw() {
       }
     break;
 
-    case 3:
+    case 2:
       background('green');
       fill('blue');
       text("DuckBird has outgrown the ecosystem and will soon conquer mankind!", 200, 200);
