@@ -18,6 +18,10 @@ var snail;
 var grape;
 var worm;
 var roach;
+var raccoon;
+var fish;
+var turtle;
+var shark;
 
 var state = 0;
 var imgState = 0;
@@ -32,6 +36,7 @@ function preload() {
   grape = loadImage("assets/1x/grapes.png");
   worm = loadImage("assets/1x/worm.png");
   roach = loadImage("assets/1x/roach.png");
+  raccoon = loadImage("assets/1x/raccoon.png");
   shark = loadImage("assets/1x/shark.png");
   fish = loadImage("assets/1x/fish.png");
   turtle = loadImage("assets/1x/turtle.png");

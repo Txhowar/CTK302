@@ -24,7 +24,7 @@ let sizeInc = 0;
 function preload() {
   duck = loadImage("assets/1x/duckbird.png");
   font1 = loadFont("assets/1x/boogaloo.ttf");
-//  song1 = loadSound("assets/1x/zoned.wav");
+  //  song1 = loadSound("assets/1x/zoned.wav");
 
   duck = loadImage("assets/1x/duckbird.png");
   worm = loadImage("assets/1x/worm.png");
@@ -51,7 +51,7 @@ function setup() {
   for (var i = 0; i < 40; i++) {
     cars.push(new Car());
 
-}
+  }
   // initialize the frog's position
   duckPos = createVector(width / 2, height - 100);
 
@@ -83,7 +83,7 @@ function draw() {
   // image(bunnyImage, 0, 0, 500, 500);
   //fill('green');
   //ellipse(0, 0, 80, 80);
-    image(duck, 0, 0, duckSize, duckSize);
+  image(duck, 0, 0, duckSize, duckSize);
   pop();
 
 
@@ -91,8 +91,8 @@ function draw() {
   duckPos.x = xPosition;
   duckPos.y = yPosition;
 
-duckPos.x = mouseX;
-duckPos.y = mouseY;
+  duckPos.x = mouseX;
+  duckPos.y = mouseY;
 
   // iterate through the car loop to move them and see if we need to delete cars
   for (var i = 0; i < cars.length; i++) {
@@ -175,7 +175,7 @@ class Car {
         break;
       }
 
-      case 1:{
+      case 1: {
         this.image = worm;
         this.v = createVector(random(3, 4), random(0));
         this.size = random(10, 11);
@@ -185,13 +185,13 @@ class Car {
 
       case 2: {
         this.image = grape;
-        this.v = createVector(0,0);
+        this.v = createVector(0, 0);
         this.size = random(10, 12);
         //this.sizeInc = this.size/2;
         break;
       }
 
-      case 3:{
+      case 3: {
         this.image = roach;
         this.v = createVector(random(5, 10), random(0));
         this.size = random(10, 40);
@@ -199,7 +199,7 @@ class Car {
         break;
       }
 
-      case 4:{
+      case 4: {
         this.image = raccoon;
         this.v = createVector(random(10, 15), random(0));
         this.size = random(150, 200);
