@@ -1,10 +1,14 @@
 var bubbles = [];
+let ball;
+let marill;
 let url = "https://docs.google.com/spreadsheets/d/14D7f_t6BulWL-02Y2aU1VCbY_TgUJ0PaeB7kMP8WMxA/edit?usp=sharing";
 
 function setup() {
   //let key = "1xG5lzBtJV3gK61ZE_qdku3ms9-pCJqwl0T8RVHI11m0"; // this is KEY of the URL from the sheet
 let key = "14D7f_t6BulWL-02Y2aU1VCbY_TgUJ0PaeB7kMP8WMxA";
   url = "https://opensheet.vercel.app/" + key + "/Form+Responses+1"; // here I'm making the string for loadJSON.
+  ball = loadImage("pokeball.png");
+  marill = loadImage("marill.jpg");
 
   loadJSON(url, gotData);
 
@@ -13,6 +17,7 @@ let key = "14D7f_t6BulWL-02Y2aU1VCbY_TgUJ0PaeB7kMP8WMxA";
   textAlign(CENTER);
   ellipseMode(CENTER);
   rectMode(CENTER);
+
 }
 
 // The data comes back as an array of objects
@@ -52,9 +57,10 @@ class Bubble {
   }
 
   display() {
+
     stroke("red");
     noFill();
-  //  if (this.animal == "rat") image(rat, this.pos.x, this,pos.y);
+
     ellipse(this.pos.x, this.pos.y+10, 120, 120);
     fill("white");
     text(
@@ -62,9 +68,12 @@ class Bubble {
       this.pos.x,
       this.pos.y
     );
+    if (this.pokemon == "marill") image(marill, this.pos.x, this.pos.y);
+if (this.pokemon == "Bulbasaur") image(ball, this.pos.x, this.pos.y);
 
     this.pos.add(this.vel);
     if (this.pos.x > width) this.pos.x = 0;
+
   }
 
 
