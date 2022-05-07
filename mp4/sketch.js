@@ -130,7 +130,7 @@ function draw() {
         }
       }
       timer++;
-      if (timer > maxTimer * 10) {
+      if (timer > maxTimer * 20) {
         for (var i = 0; i < 1; i++) {
           cars.push(new Car());
           timer = 0;
@@ -222,15 +222,15 @@ function Car() {
 
     }
 
-    if(duckSize >= 300 && duckSize < 400) {
+    if(duckSize >= 300 && duckSize < 500) {
 
       image(snail, this.pos.x, this.pos.y, this.s, this.s);
 
     }
 
-    if(duckSize >= 400 && duckSize < 500) {
-      image(raccoon, this.pos.x, this.pos.y, this.s, this.s);
-    }
+    //if(duckSize >= 400 && duckSize < 500) {
+    //  image(raccoon, this.pos.x, this.pos.y, this.s, this.s);
+  //  }
 
     if(duckSize >= 500 && duckSize < 600) {
       background("#006994");
