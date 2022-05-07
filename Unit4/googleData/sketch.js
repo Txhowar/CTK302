@@ -8,7 +8,7 @@ let key = "14D7f_t6BulWL-02Y2aU1VCbY_TgUJ0PaeB7kMP8WMxA";
 
   loadJSON(url, gotData);
 
-  // Regular setup code we usually have
+  /// Regular setup code we usually have
   createCanvas(600, 600);
   textAlign(CENTER);
   ellipseMode(CENTER);
